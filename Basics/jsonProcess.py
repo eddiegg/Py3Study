@@ -9,7 +9,7 @@ def JsonParser(file):
 
 
 def test():
-    test_data = JsonParser("E:\Py3Study\Basics\jsonData.json")
+    test_data = JsonParser("jsonData.json")
     pdit = {}
     for pd in test_data:
         print(pd["batters"]["batter"])
