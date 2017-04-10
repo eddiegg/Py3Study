@@ -1,10 +1,9 @@
-from NoteBook import *
+import NoteBook
 import sys
-
 
 class Menu:
     def __init__(self):
-        self.notebook = NoteBook()
+        self.notebook = NoteBook.NoteBook()
         self.choices = {
             '1': self.show_notes,
             '2': self.search_notes,

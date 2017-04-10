@@ -50,4 +50,3 @@ if __name__ == '__main__':
     book.new_note('eddie', 'python,java')
     book.new_note("java", "head first")
     book.new_note("python", "head first")
-    book.show_notes(book.search('eddie'))
