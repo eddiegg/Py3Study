@@ -35,13 +35,11 @@ class Apartment(Property):
         laundry = get_valid_input('''
         What laundry facilities does 
         the property have?
-        {}
-        '''.format(Apartment.valid_balconies))
+        ''', Apartment.valid_laundries)
 
         balcony = get_valid_input('''
         Does the property have a balcony?
-        {}
-        '''.format(Apartment.valid_balconies))
+        ''', Apartment.valid_balconies)
 
         parent_init.update({
             "laundry": laundry,

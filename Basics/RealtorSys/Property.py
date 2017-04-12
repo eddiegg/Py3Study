@@ -13,7 +13,7 @@ class Property:
         bedrooms: {1}
         bathrooms: {2}
         
-        '''.format(self.square_feet, self.num_baths,
+        '''.format(self.square_feet, self.num_bedrooms,
                    self.num_baths))
 
     @staticmethod

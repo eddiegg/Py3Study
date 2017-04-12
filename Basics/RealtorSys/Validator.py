@@ -4,6 +4,3 @@ def get_valid_input(input_string, valid_options):
     while response.lower() not in valid_options:
         response = input(input_string)
     return response
-
-if __name__ == '__main__':
-    print(get_valid_input("what laundry?",("coin","ensuite","none")))
