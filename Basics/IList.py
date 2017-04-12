@@ -1,16 +1,12 @@
-'''
-学习python3的一些简单代码
-'''
-import pickle
-# isinstance(item, list)
-# dir(__builtins__)
+dc = {100000: "python",
+      100001: "java",
+      100002: "nodejs"}
+print(dc)
 
-Istr = 'hi, I am eddie'
-print(Istr.strip('e'))
+dc.update({"others": {100003: "javascript"}})
+dc.update({100004: "sikuli"})
 
-with open('myData.pickle','wb') as mysavedata:
-    pickle.dump([45,"sadf",'false'], mysavedata)
-with open('myData.pickle','rb') as mystoredata:
-    temlst = pickle.load(mystoredata)
-print(temlst)
-print(mystoredata)
+print('''
+++++++++++++++
+{}
+'''.format(dc))

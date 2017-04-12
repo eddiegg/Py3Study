@@ -23,3 +23,6 @@ class Property:
                     baths = input("Enter number of baths: "))
 
         # prompt_init = staticmethod(prompt_init)
+
+if __name__ == '__main__':
+    print(Property.prompt_init())
