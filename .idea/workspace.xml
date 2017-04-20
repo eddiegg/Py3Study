@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b5d2996-d9a0-460c-bef1-b960953b417a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Basics/WebTest/IUnittest.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Basics/WebTest/Test001.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Basics/WebTest/Test002.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Basics/WebTest/WebTestMod01/TestMod001.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Basics/WebTest/WebTestMod01/TestMod002.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Basics/WebTest/WebTestMod01/__init__.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Basics/WebTest/IUnittest.py" afterPath="$PROJECT_DIR$/Basics/WebTest/IUnittest.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Basics/WebTest/baidu.py" afterPath="$PROJECT_DIR$/Basics/WebTest/baidu.py" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,11 +43,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="baidu.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="baidu.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Basics/WebTest/baidu.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="2" column="22" lean-forward="false" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+            <state relative-caret-position="189">
+              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
@@ -60,11 +55,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IUnittest.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="IUnittest.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Basics/WebTest/IUnittest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state relative-caret-position="441">
+              <caret line="21" column="30" lean-forward="true" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
               <folding>
                 <element signature="e#14#29#0" expanded="true" />
               </folding>
@@ -162,7 +157,6 @@
         <option value="$PROJECT_DIR$/Basics/Idict.py" />
         <option value="$PROJECT_DIR$/Basics/Iargs.py" />
         <option value="$PROJECT_DIR$/Basics/OO.py" />
-        <option value="$PROJECT_DIR$/Basics/WebTest/baidu.py" />
         <option value="$PROJECT_DIR$/Basics/WebTest/Test001.py" />
         <option value="$PROJECT_DIR$/Basics/WebTest/Test002.py" />
         <option value="$PROJECT_DIR$/Basics/WebTest/WebTestMod01/Mod002.py" />
@@ -171,6 +165,7 @@
         <option value="C:/Python35/Lib/HTMLTestRunner.py" />
         <option value="$PROJECT_DIR$/Basics/WebTest/WebTestMod01/TestMod001.py" />
         <option value="$PROJECT_DIR$/Basics/WebTest/IUnittest.py" />
+        <option value="$PROJECT_DIR$/Basics/WebTest/baidu.py" />
       </list>
     </option>
   </component>
@@ -296,7 +291,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.IUnittest">
+  <component name="RunManager" selected="Python.baidu">
     <configuration default="false" name="baidu" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -521,10 +516,10 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.IUnittest" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in IUnittest.py" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests for WebTest.IUnittest.MyClass" />
-        <item index="3" class="java.lang.String" itemvalue="Python.baidu" />
+        <item index="0" class="java.lang.String" itemvalue="Python.baidu" />
+        <item index="1" class="java.lang.String" itemvalue="Python.IUnittest" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in IUnittest.py" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests for WebTest.IUnittest.MyClass" />
         <item index="4" class="java.lang.String" itemvalue="Python.Iargs" />
       </list>
     </recent_temporary>
@@ -590,7 +585,14 @@
       <option name="project" value="LOCAL" />
       <updated>1492665410982</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="py3">
+      <created>1492680342454</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1492680342454</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1001,16 +1003,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Basics/WebTest/baidu.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="22" lean-forward="false" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Basics/WebTest/2017-04-20 17.17.00 result.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
@@ -1021,10 +1013,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Basics/WebTest/IUnittest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state relative-caret-position="441">
+          <caret line="21" column="30" lean-forward="true" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
           <folding>
             <element signature="e#14#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Basics/WebTest/baidu.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
           </folding>
         </state>
       </provider>

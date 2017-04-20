@@ -2,7 +2,6 @@
 import unittest
 import HTMLTestRunner
 import time
-import os
 
 def createSuite():
     testunit = unittest.TestSuite()
