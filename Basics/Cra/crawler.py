@@ -1,3 +1,4 @@
+
 import re
 from selenium import webdriver
 from selenium.common.exceptions import TimeoutException
@@ -51,7 +52,7 @@ def get_products():
             'image': item.find('.pic .img').attr('src'),
             'price': item.find('.price').text()
         }
-    print(product)
+        print(product)
 
 def main():
     total = search()
