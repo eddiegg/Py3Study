@@ -1,7 +1,5 @@
 import os, pickle, json , shutil, glob
-from tablib import Dataset
 import pyexcel as pe
-import pyexcel_xls
 
 # d = "F:\\"
 # print([x for x in os.listdir(d) if os.path.isfile(d+x)])
@@ -53,16 +51,6 @@ import pyexcel_xls
 # else:
 #     print("false")
 
-# test_result = Dataset()
-# test_result.headers = ('公司','是否查找到（Y/N）')
-# with open('./fn','r',encoding='utf-8',newline='') as f:
-#     for line in f:
-#         line = line.strip('\n').split(',')
-#         test_result.append(line)
-# time_stamp = ['05/10','05/09',' ',' ']
-# test_result.append_col(time_stamp,'时间')
-# with open('./tt.xls','wb') as d:
-#     d.write(test_result.xls)
 
 # records = pyexcel.get_sheet(file_name='./test.xlsx')
 # new_column = ["结果"]
@@ -72,10 +60,40 @@ import pyexcel_xls
 # records.column+=new_column
 # records.save_as('./test.xlsx')
 
-records = pe.get_sheet(file_name='F:\\fj.xlsx')
-comp_list = []
-for record in records:
-    if(record[0] != '' and record[0] != '企业名称'):
-        comp_list.append(record[0])
-print(comp_list)
-print(len(comp_list))
+# records = pe.get_sheet(file_name='F:\\fj.xlsx')
+# comp_list = []
+# for record in records:
+#     if(record[0] != '' and record[0] != '企业名称'):
+#         comp_list.append(record[0])
+# print(comp_list)
+# print(len(comp_list))
+
+
+# data = pe.iget_records(file_name='./comp.xlsx')
+# for record in data:
+#     # print(record,type(record))
+#     print(record['企业名'])
+
+# data = pe.get_sheet(file_name='./comp.xlsx',start_row=1,row_limit=3)
+# print(len(list(data.rows())))
+# for record in data:
+#     print(record)
+
+# data = pe.get_sheet(file_name='./comp.xlsx')
+# del data.row[4:]
+# data.save_as(filename='./comp.xlsx')
+
+# data = pe.get_sheet(file_name='./comp.xlsx')
+# print(data)
+
+data = pe.get_sheet(file_name='./comp.xlsx')
+for record in data:
+    try:
+        if(int((record[1])[:-1])>8000):
+            record[2]='不错'
+        else:
+            record[2]='继续努力'
+    except ValueError:
+        print('这条数据有问题：'+str(record))
+        pass
+data.save_as(filename='./comp_result.xlsx')
