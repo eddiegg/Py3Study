@@ -5,10 +5,12 @@ from WebDemo.pages.MainPage import MainPage
 class testMainPage(unittest.TestCase):
 
     def setUp(self):
-        self.driver = webdriver.Firefox()
+        self.driver = webdriver.Chrome()
         self.url = 'http://www.baidu.com'
+        print("started")
 
     def tearDown(self):
+        print("quit")
         self.driver.quit()
 
     def testSearch(self):

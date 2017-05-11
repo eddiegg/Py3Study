@@ -1,4 +1,4 @@
-import os, pickle, json , shutil, glob
+import os, pickle, json, shutil, glob
 import pyexcel as pe
 
 # d = "F:\\"
@@ -60,15 +60,6 @@ import pyexcel as pe
 # records.column+=new_column
 # records.save_as('./test.xlsx')
 
-# records = pe.get_sheet(file_name='F:\\fj.xlsx')
-# comp_list = []
-# for record in records:
-#     if(record[0] != '' and record[0] != '企业名称'):
-#         comp_list.append(record[0])
-# print(comp_list)
-# print(len(comp_list))
-
-
 # data = pe.iget_records(file_name='./comp.xlsx')
 # for record in data:
 #     # print(record,type(record))
@@ -86,14 +77,51 @@ import pyexcel as pe
 # data = pe.get_sheet(file_name='./comp.xlsx')
 # print(data)
 
-data = pe.get_sheet(file_name='./comp.xlsx')
-for record in data:
-    try:
-        if(int((record[1])[:-1])>8000):
-            record[2]='不错'
-        else:
-            record[2]='继续努力'
-    except ValueError:
-        print('这条数据有问题：'+str(record))
-        pass
-data.save_as(filename='./comp_result.xlsx')
+
+# '''根据处理结果更新列'''
+# data = pe.get_sheet(file_name='./test.xlsx')
+# print(type(data))
+# for record in data:
+#     try:
+#         if(int((record[1])[:-1])>8000):
+#             record[2]='不错'
+#         else:
+#             record[2]='继续努力'
+#     except ValueError:
+#         print('这条数据有问题：'+str(record))
+#         pass
+# data.save_as(filename='./comp_result.xlsx')
+
+# '''处理有多行合并的excel数据，去除空行和不需要的行，去除不需要的列并加上需要的新列'''
+# data = pe.get_sheet(file_name='F:\\fj2.xlsx')
+# num_rows = data.number_of_rows()
+# num_cloumns = data.number_of_columns()
+# to_be_deleted = []
+# for i in range(0, num_rows):
+#     if (data.row[i][0] == '' or data.row[i][0] == '企业类型' or data.row[i][0] == '企业名称'):
+#         to_be_deleted.append(i)
+# data.delete_rows(to_be_deleted)
+# data.delete_columns([x for x in range(1, num_cloumns)])
+# # 新增一列
+# data.column += ["结果", ]
+# data.save_as(filename='F:\\fj2.xlsx')
+
+# '''list of list数据保存为excel'''
+# data=pe.get_sheet(file_name='F:\\fj2.xlsx')
+# result=[]
+# for line in data:
+#     result.append(list(line))
+# pe.save_as(array=result,dest_file_name='F:\\arraytoexcel.xlsx')
+
+'''处理有多行合并的excel数据，去除空行和不需要的行，去除不需要的列并加上需要的新行'''
+data = pe.get_sheet(file_name='F:\\fj.xlsx')
+to_be_deleted = []
+for i,record in enumerate(data.rows()):
+    if (data.row[i][0] == '' or data.row[i][0] == '企业类型' or data.row[i][0] == '企业名称'):
+        to_be_deleted.append(i)
+data.delete_rows(to_be_deleted)
+data.delete_columns([x for x in range(1, data.number_of_columns())])
+# 新增一行，只能加在末尾
+data.save_as(filename='F:\\fj2.xlsx')
+
+
