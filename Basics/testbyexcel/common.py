@@ -34,8 +34,7 @@ class Common(object):
     def element_wait(self, line):
         '''
         等待元素出现
-        Usage:
-        
+        Usage:       
         '''
         wait = WebDriverWait(self.driver, 10)
 
@@ -52,10 +51,10 @@ class Common(object):
             wait.until(EC.presence_of_element_located((By.LINK_TEXT, value)))
         elif by == "xpath":
             wait.until(EC.presence_of_element_located((By.XPATH, value)))
-        elif by == "css":
-            wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, value)))
+        elif by == "line":
+            wait.until(EC.presence_of_element_located((By.line_SELECTOR, value)))
         else:
-            raise NameError("请检查excel中得定位方法:'id','name','class','link_text','xpath','css'.")
+            raise NameError("请检查excel中得定位方法:'id','name','class','link_text','xpath','line'.")
 
     def get_element(self,line):
         '''
@@ -74,10 +73,10 @@ class Common(object):
             element = self.driver.find_element_by_link_text(value)
         elif by == "xpath":
             element = self.driver.find_element_by_xpath(value)
-        elif by == "css":
-            element = self.driver.find_element_by_css_selector(value)
+        elif by == "line":
+            element = self.driver.find_element_by_line_selector(value)
         else:
-            raise NameError("请检查excel中得定位方法,'id','name','class','link_text','xpath','css'.")
+            raise NameError("请检查excel中得定位方法,'id','name','class','link_text','xpath','line'.")
         return element
 
     def open(self, url):
@@ -110,248 +109,185 @@ class Common(object):
     def type(self, line):
         '''
         输入框中输入指定文字
-
         '''
-        self.element_wait(line[1:3])
-        el = self.get_element(line[1:3])
-        el.send_keys(line[3])
+        keywords=str(line[3])
+        self.element_wait(line)
+        self.get_element(line).send_keys(keywords)
 
     def clear(self, line):
         '''
         清除输入框文字
-
         '''
-        self.element_wait(line[1:3])
-        el = self.get_element(line[1:3])
-        el.clear()
+        self.element_wait(line)
+        self.get_element(line).clear()
 
     def click(self, line):
         '''
         点击
         '''
-        self.element_wait(line[1:3])
-        el = self.get_element(line[1:3])
+        self.element_wait(line)
+        el = self.get_element(line)
         el.click()
 
-    def right_click(self, css):
+    def right_click(self, line):
         '''
-        Right click element.
-
-        Usage:
-        driver.right_click("css=>#el")
+        右击
         '''
-        self.element_wait(css)
-        el = self.get_element(css)
+        self.element_wait(line)
+        el = self.get_element(line)
         ActionChains(self.driver).context_click(el).perform()
 
-    def move_to_element(self, css):
+    def move_to_element(self, line):
         '''
-        Mouse over the element.
-
-        Usage:
-        driver.move_to_element("css=>#el")
+        鼠标悬停
         '''
-        self.element_wait(css)
-        el = self.get_element(css)
+        self.element_wait(line)
+        el = self.get_element(line)
         ActionChains(self.driver).move_to_element(el).perform()
 
-    def double_click(self, css):
+    def double_click(self, line):
         '''
-        Double click element.
-
-        Usage:
-        driver.double_click("css=>#el")
+        双击
         '''
-        self.element_wait(css)
-        el = self.get_element(css)
+        self.element_wait(line)
+        el = self.get_element(line)
         ActionChains(self.driver).double_click(el).perform()
 
-    def drag_and_drop(self, el_css, ta_css):
+    def drag_and_drop(self, line):
         '''
-        Drags an element a certain distance and then drops it.
-
-        Usage:
-        driver.drag_and_drop("css=>#el","css=>#ta")
+        拖动
         '''
-        self.element_wait(el_css)
-        element = self.get_element(el_css)
-        self.element_wait(ta_css)
-        target = self.get_element(ta_css)
+        self.element_wait(line[0:3])
+        element = self.get_element(line[0:3])
+        self.element_wait(line[3:6])
+        target = self.get_element(line[3:6])
         ActionChains(self.driver).drag_and_drop(element, target).perform()
 
-    def click_text(self, text):
+    def click_text(self, line):
         '''
-        Click the element by the link text
-
-        Usage:
-        driver.click_text("新闻")
+        点击文字
         '''
-        self.driver.find_element_by_partial_link_text(text).click()
+        self.driver.find_element_by_partial_link_text(line[3]).click()
 
     def close(self):
         '''
-        Simulates the user clicking the "close" button in the titlebar of a popup
-        window or tab.
-
-        Usage:
-        driver.close()
+        点击关闭按钮
         '''
         self.driver.close()
 
-    def quit(self):
+    def quit(self,line):
         '''
-        Quit the driver and close all the windows.
-
-        Usage:
-        driver.quit()
+        关闭浏览器
         '''
         self.driver.quit()
 
-    def submit(self, css):
+    def submit(self, line):
         '''
-        Submit the specified form.
-
-        Usage:
-        driver.submit("css=>#el")
+        提交表单
         '''
-        self.element_wait(css)
-        el = self.get_element(css)
+        self.element_wait(line)
+        el = self.get_element(line)
         el.submit()
 
     def F5(self):
         '''
-        Refresh the current page.
-
-        Usage:
-        driver.F5()
+        刷新页面
         '''
         self.driver.refresh()
 
     def js(self, script):
         '''
-        Execute JavaScript scripts.
+        执行js
 
-        Usage:
+        例:
         driver.js("window.scrollTo(200,1000);")
         '''
         self.driver.execute_script(script)
 
-    def get_attribute(self, css, attribute):
+    def get_attribute(self, line, attribute):
         '''
-        Gets the value of an element attribute.
+        获取元素指定属性
 
-        Usage:
-        driver.get_attribute("css=>#el","type")
         '''
-        el = self.get_element(css)
+        el = self.get_element(line)
         return el.get_attribute(attribute)
 
-    def get_text(self, css):
+    def get_text(self, line):
         '''
-        Get element text information.
-
-        Usage:
-        driver.get_text("css=>#el")
+        获取元素文字属性
         '''
-        self.element_wait(css)
-        el = self.get_element(css)
+        self.element_wait(line)
+        el = self.get_element(line)
         return el.text
 
-    def get_display(self, css):
+    def get_display(self, line):
         '''
-        Gets the element to display,The return result is true or false.
-
-        Usage:
-        driver.get_display("css=>#el")
+        检查特定元素是否显示
         '''
-        self.element_wait(css)
-        el = self.get_element(css)
+        self.element_wait(line)
+        el = self.get_element(line)
         return el.is_displayed()
 
-    def get_title(self):
+    def get_title(self,line):
         '''
-        Get window title.
-
-        Usage:
-        driver.get_title()
+        获取窗口标题
         '''
         return self.driver.title
 
     def get_url(self):
         '''
-        Get the URL address of the current page.
-
-        Usage:
-        driver.get_url()
+        获取URL
         '''
         return self.driver.current_url
 
-    def get_windows_img(self, file_path):
+    def get_windows_img(self, file_path='./img/'):
         '''
-        Get the current window screenshot.
-
-        Usage:
-        driver.get_windows_img()
+        当前窗口截图并保存到指定位置
         '''
         self.driver.get_screenshot_as_file(file_path)
 
     def wait(self, secs):
         '''
-        Implicitly wait.All elements on the page.
+        隐式等待
 
-        Usage:
+        例:
         driver.wait(10)
         '''
         self.driver.implicitly_wait(secs)
 
     def accept_alert(self):
         '''
-        Accept warning box.
+        确定弹窗
 
-        Usage:
-        driver.accept_alert()
         '''
         self.driver.switch_to.alert.accept()
 
     def dismiss_alert(self):
         '''
-        Dismisses the alert available.
-
-        Usage:
-        driver.dismiss_alert()
+        取消弹窗
         '''
         self.driver.switch_to.alert.dismiss()
 
-    def switch_to_frame(self, css):
+    def switch_to_frame(self, line):
         '''
-        Switch to the specified frame.
-
-        Usage:
-        driver.switch_to_frame("css=>#el")
+        切换到指定frame
         '''
-        self.element_wait(css)
-        iframe_el = self.get_element(css)
+        self.element_wait(line)
+        iframe_el = self.get_element(line)
         self.driver._switch_to.frame(iframe_el)
 
     def switch_to_frame_out(self):
         '''
-        Returns the current form machine form at the next higher level.
-        Corresponding relationship with switch_to_frame () method.
-
-        Usage:
-        driver.switch_to_frame_out()
+        从当前frame切换到默认frame
         '''
         self.driver._switch_to.default_content()
 
-    def open_new_window(self, css):
+    def open_new_window(self, line):
         '''
-        Open the new window and switch the handle to the newly opened window.
-
-        Usage:
-        driver.open_new_window()
+        开启并转移到新窗口
         '''
         original_windows = self.driver.current_window_handle
-        el = self.get_element(css)
+        el = self.get_element(line)
         el.click()
         all_handles = self.driver.window_handles
         for handle in all_handles:
