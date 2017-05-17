@@ -1,5 +1,6 @@
-import os, pickle, json, shutil, glob
-import pyexcel as pe
+# import os, pickle, json, shutil, glob, re
+# import pyexcel as pe
+
 
 # d = "F:\\"
 # print([x for x in os.listdir(d) if os.path.isfile(d+x)])
@@ -112,16 +113,16 @@ import pyexcel as pe
 # for line in data:
 #     result.append(list(line))
 # pe.save_as(array=result,dest_file_name='F:\\arraytoexcel.xlsx')
-
-'''处理有多行合并的excel数据，去除空行和不需要的行，去除不需要的列并加上需要的新行'''
-data = pe.get_sheet(file_name='F:\\fj.xlsx')
-to_be_deleted = []
-for i,record in enumerate(data.rows()):
-    if (data.row[i][0] == '' or data.row[i][0] == '企业类型' or data.row[i][0] == '企业名称'):
-        to_be_deleted.append(i)
-data.delete_rows(to_be_deleted)
-data.delete_columns([x for x in range(1, data.number_of_columns())])
-# 新增一行，只能加在末尾
-data.save_as(filename='F:\\fj2.xlsx')
-
+#
+# '''处理有多行合并的excel数据，去除空行和不需要的行，去除不需要的列并加上需要的新行'''
+# data = pe.get_sheet(file_name='F:\\hz0505.xlsx')
+# to_be_deleted = []
+# print(type(data.row))
+# for i,record in enumerate(data.rows()):
+#     if (data.row[i][0] == '' or data.row[i][0] == '企业类型' or data.row[i][0] == '企业名称'):
+#         to_be_deleted.append(i)
+# data.delete_rows(to_be_deleted)
+# data.delete_columns([x for x in range(1, data.number_of_columns())])
+# # 新增一行，只能加在末尾
+# data.save_as(filename='F:\\hz0505.xlsx')
 
