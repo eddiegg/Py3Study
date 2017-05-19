@@ -13,7 +13,8 @@ class testMainPage(unittest.TestCase):
         print("quit")
         self.driver.quit()
 
-    def testSearch(self):
+    def test_Search(self):
+        '''search baidu for python3'''
         mainPage = MainPage(self.driver)
         mainPage.open(self.url)
         mainPage.search('python3')
