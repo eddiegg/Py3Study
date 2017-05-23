@@ -1,6 +1,9 @@
 import multiprocessing
 import threading
+import multitasking
 from time import sleep, ctime
+
+multitasking.set_engine("process")
 
 def profile(func):
     def wrapper(*args, **kwargs):
@@ -11,19 +14,19 @@ def profile(func):
         print('COST: {}'.format(end - start))
     return wrapper
 
+@multitasking.task
 @profile
 def music():
     print('listenin music...'+ctime())
     sleep(4)
 
+@multitasking.task
 @profile
 def movie():
     print('watching movie...'+ctime())
     sleep(7)
 
 if __name__ == '__main__':
-    pool = multiprocessing.Pool(processes=4)
-    for i in range(4):
-        pool.apply_async(music)
-    pool.close()
-    pool.join()
+    for i in range(5):
+        music()
+        movie()

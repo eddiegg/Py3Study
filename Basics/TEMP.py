@@ -1,5 +1,7 @@
 # import os, pickle, json, shutil, glob, re
 # import pyexcel as pe
+import heapq
+from collections import defaultdict
 
 
 # d = "F:\\"
@@ -126,3 +128,8 @@
 # # 新增一行，只能加在末尾
 # data.save_as(filename='F:\\hz0505.xlsx')
 
+d= defaultdict(list)
+d['a'].append(1)
+d['a'].append(2)
+d['b'].append(3)
+print(d)
