@@ -66,4 +66,4 @@ if __name__ == '__main__':
             description=u"执行结果"
         )
         runner.run(createSuite())
-    send_report('../report')
+    # send_report('../report')
