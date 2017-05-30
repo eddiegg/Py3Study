@@ -26,6 +26,8 @@ class Common(object):
             driver = webdriver.PhantomJS()
         elif browser == 'edge':
             driver = webdriver.Edge()
+        elif browser == 'safari':
+            driver = webdriver.Safari()
         try:
             self.driver = driver
         except Exception:
@@ -51,10 +53,10 @@ class Common(object):
             wait.until(EC.presence_of_element_located((By.LINK_TEXT, value)))
         elif by == "xpath":
             wait.until(EC.presence_of_element_located((By.XPATH, value)))
-        elif by == "line":
-            wait.until(EC.presence_of_element_located((By.line_SELECTOR, value)))
+        elif by == 'css':
+            wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, value)))
         else:
-            raise NameError("请检查excel中得定位方法:'id','name','class','link_text','xpath','line'.")
+            raise NameError("请检查excel中得定位方法:'id','name','class','link_text','xpath','css'.")
 
     def get_element(self,line):
         '''
@@ -73,10 +75,10 @@ class Common(object):
             element = self.driver.find_element_by_link_text(value)
         elif by == "xpath":
             element = self.driver.find_element_by_xpath(value)
-        elif by == "line":
-            element = self.driver.find_element_by_line_selector(value)
+        elif by == "css":
+            element = self.driver.find_element_by_css_selector(value)
         else:
-            raise NameError("请检查excel中得定位方法,'id','name','class','link_text','xpath','line'.")
+            raise NameError("请检查excel中得定位方法,'id','name','class','link_text','xpath','css'.")
         return element
 
     def open(self, url):
@@ -293,3 +295,13 @@ class Common(object):
         for handle in all_handles:
             if handle != original_windows:
                 self.driver._switch_to.window(handle)
+
+    def verify_attribute(self, line):
+        '''
+        检查元素attribute值是否符合预期
+        '''
+        if(self.get_attribute(line,line[0]) == line[6]):
+            return "验证通过"
+        else:
+            return "验证失败"
+

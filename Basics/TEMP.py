@@ -1,5 +1,7 @@
+#coding:utf-8
 # import os, pickle, json, shutil, glob, re
 # import pyexcel as pe
+import requests,json
 
 
 # d = "F:\\"
@@ -126,3 +128,29 @@
 # # 新增一行，只能加在末尾
 # data.save_as(filename='F:\\hz0505.xlsx')
 
+jsonVal=[{"conditions":[{"filed":"test1","operation":"lt","value":"111"},  \
+                        {"filed":"test2","operation":"rt","value":"333"},   \
+                        {"filed":"test3","operation":"eq","value":"222"}]},"2nd"]
+jstring='{"end_date":"-","changerecords":[],"address":"重庆市渝中区瑞天路182号6单元1-2#","reg_no":"500103008812619","oper_name":"官珉","branches":[],"credit_no":"91500103MA5U6FHX56","term_start":"2016-06-16","province":"CQ","partners":[{"stock_type":"自然人","identify_no":"（非公示项）","real_capi_items":[],"name":"官珉","identify_type":"（非公示项）","should_capi_items":[{"should_capi_date":"-","invest_type":"","shoud_capi":"100 万人民币"}]},{"stock_type":"自然人","identify_no":"（非公示项）","real_capi_items":[],"name":"邓小柱","identify_type":"（非公示项）","should_capi_items":[{"should_capi_date":"-","invest_type":"","shoud_capi":"100 万人民币"}]}],"check_date":"2016-06-16","scope":"预包装食品经营（依法须经批准的项目，经相关部门批准后方可开展经营活动）；销售初级农产品、日用百货、办公用品、工艺美术品（不含文物）；货物进出口（法律、行政法规禁止的项目除外，法律、行政法规限制的项目取得许可后经营）。『以上范围法律、法规、国务院决定禁止经营的不得经营；法律、法规、国务院决定规定应经审批而未获审批前不得经营』★★","name":"重庆千香汇商贸有限公司","belong_org":"重庆市工商行政管理局渝中区分局","term_end":"永久","id":"6681b7e7-216b-4bc9-b322-54c5e18f3abd","org_no":"MA5U6FHX5","abnormal_items":[],"employees":[{"name":"官珉","job_title":"执行董事、经理"},{"name":"邓小柱","job_title":"监事"}],"regist_capi":"200 万人民币","econ_kind":"有限责任公司(自然人投资或控股)","start_date":"2016-06-16","status":"存续"}'
+
+pp=json.loads(jstring)
+keys=[]
+keys2=pp.keys()
+def get_keys(dic):
+    for (key,value) in dic.items():
+        if(isinstance(value,dict)):
+            get_keys(value)
+        elif(isinstance(value,list)):
+            if(len(value)>0):
+                temp=dict(value[0])
+                keys.append(key)
+                for (k,v) in temp.items():
+                    keys.append(k)
+            else:
+                keys.append(key)
+        else:
+            keys.append(key)
+
+get_keys(pp)
+print(keys)
+print(keys2)

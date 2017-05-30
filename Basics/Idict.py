@@ -1,4 +1,3 @@
-from collections import OrderedDict
 idict = {"eddie": 345154,
          "harvey": 13123123}
 try:
@@ -9,5 +8,3 @@ else:
     raise Exception("already exits")
 
 print(idict)
-
-idict.__new__()
