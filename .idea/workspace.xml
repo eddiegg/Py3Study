@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b5d2996-d9a0-460c-bef1-b960953b417a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Basics/API/tt.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Basics/calcmd5.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Basics/md5.xlsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Basics/testbyexcel/comp.xlsx" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Basics/calcmd5.py" afterPath="$PROJECT_DIR$/Basics/testbyexcel/calcmd5.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -26,11 +27,9 @@
       <file leaf-file-name="CaseEngine.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Basics/testbyexcel/CaseEngine.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
+            <state relative-caret-position="-10">
               <caret line="7" column="10" lean-forward="false" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
-              <folding>
-                <element signature="e#0#20#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -50,19 +49,21 @@
       <file leaf-file-name="TEMP.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Basics/TEMP.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="133" column="9" lean-forward="true" selection-start-line="133" selection-start-column="9" selection-end-line="133" selection-end-column="1136" />
+            <state relative-caret-position="293">
+              <caret line="95" column="45" lean-forward="true" selection-start-line="95" selection-start-column="45" selection-end-line="95" selection-end-column="45" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="calcmd5.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Basics/calcmd5.py">
+        <entry file="file://$PROJECT_DIR$/Basics/testbyexcel/calcmd5.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="17" column="30" lean-forward="true" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
-              <folding />
+            <state relative-caret-position="175">
+              <caret line="16" column="30" lean-forward="true" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -182,7 +183,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Basics/ITime.py" />
         <option value="$PROJECT_DIR$/Basics/Idict.py" />
         <option value="$PROJECT_DIR$/Basics/Iargs.py" />
         <option value="$PROJECT_DIR$/Basics/OO.py" />
@@ -233,6 +233,7 @@
         <option value="$PROJECT_DIR$/Basics/TEMP.py" />
         <option value="$PROJECT_DIR$/Basics/API/tt.html" />
         <option value="$PROJECT_DIR$/Basics/calcmd5.py" />
+        <option value="$PROJECT_DIR$/Basics/testbyexcel/calcmd5.py" />
       </list>
     </option>
   </component>
@@ -308,6 +309,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Py3Study" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Basics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testbyexcel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -323,14 +338,15 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Py3Study\Basics\dbstudy" />
-      <recent name="$PROJECT_DIR$/Basics/NoteBook" />
-      <recent name="E:\Py3Study\Basics" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Py3Study\Basics\WebTest\WebTestMod01" />
       <recent name="E:\Py3Study\Basics\WebTest" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Basics/testbyexcel" />
+      <recent name="E:\Py3Study\Basics\dbstudy" />
+      <recent name="$PROJECT_DIR$/Basics/NoteBook" />
+      <recent name="E:\Py3Study\Basics" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -430,7 +446,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Basics" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Basics/calcmd5.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Basics/testbyexcel/calcmd5.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -694,7 +710,14 @@
       <option name="project" value="LOCAL" />
       <updated>1496152605761</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="py3">
+      <created>1496329496992</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1496329496992</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -939,16 +962,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Basics/testbyexcel/CaseEngine.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="10" lean-forward="false" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Basics/API/APITest.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="836">
@@ -977,14 +990,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Basics/TEMP.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="133" column="9" lean-forward="true" selection-start-line="133" selection-start-column="9" selection-end-line="133" selection-end-column="1136" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Basics/API/tt.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -993,11 +998,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Basics/calcmd5.py">
+    <entry file="file://$PROJECT_DIR$/Basics/TEMP.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="30" lean-forward="true" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+        <state relative-caret-position="293">
+          <caret line="95" column="45" lean-forward="true" selection-start-line="95" selection-start-column="45" selection-end-line="95" selection-end-column="45" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Basics/testbyexcel/CaseEngine.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-10">
+          <caret line="7" column="10" lean-forward="false" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Basics/testbyexcel/calcmd5.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="16" column="30" lean-forward="true" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
