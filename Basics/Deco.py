@@ -10,7 +10,7 @@ def gental_man(*args, **kwargs):
 
 
 @gental_man(('java', 'python'))
-def hi(name="eddie"):
+def hi(name="eddie112"):
     print("Hi,{}".format(name))
 
 
