@@ -14,7 +14,7 @@ class Frog:
 class Bug:
 
     def __str__(self):
-        return 'a terrible bug'
+        return 'a terrible bug haha'
 
     def action(self):
         return 'eats it happy?'
