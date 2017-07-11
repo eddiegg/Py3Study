@@ -14,10 +14,10 @@ class Frog:
 class Bug:
 
     def __str__(self):
-        return 'a bug'
+        return 'a terrible bug'
 
     def action(self):
-        return 'eats it'
+        return 'eats it happy?'
 
 
 class FrogWorld:
