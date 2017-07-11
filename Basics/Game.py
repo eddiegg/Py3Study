@@ -17,7 +17,7 @@ class Bug:
         return 'a terrible bug'
 
     def action(self):
-        return 'eats it'
+        return 'eats it happy?'
 
 
 class FrogWorld:
